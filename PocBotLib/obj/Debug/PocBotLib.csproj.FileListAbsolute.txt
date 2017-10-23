@@ -1,0 +1,16 @@
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\PocBotLib.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\PocBotLib.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Core.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Util.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Core.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Core.xml
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Util.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.Util.xml
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\Debug\PocBotLib.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\Debug\PocBotLib.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.UC.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.UC.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\BuildABot.UC.xml
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\Debug\PocBotLib.csprojResolveAssemblyReference.cache
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\Log.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\Debug\Log.pdb

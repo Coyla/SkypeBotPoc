@@ -1,0 +1,16 @@
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\GenericBotConsole.exe.config
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\GenericBotConsole.exe
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\GenericBotConsole.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Core.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Util.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Core.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Core.xml
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Util.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\BuildABot.Util.xml
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\Debug\GenericBotConsole.csprojResolveAssemblyReference.cache
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\Debug\GenericBotConsole.exe
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\Debug\GenericBotConsole.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\PocBotLib.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\PocBotLib.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\Log.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\Debug\Log.pdb

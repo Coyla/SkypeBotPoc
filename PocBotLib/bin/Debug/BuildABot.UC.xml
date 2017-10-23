@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuildABot.UC</name>
+    </assembly>
+    <members>
+        <member name="T:BuildABot.UC.ConferenceInformation">
+            <summary>
+            Contains information about the conference. 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.Passcode">
+            <summary>
+            Gets or sets the conference passcode.
+            </summary>
+            <value>The passcode.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.Subject">
+            <summary>
+            Gets or sets the subject of the conference.
+            </summary>
+            <value>The subject.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.Description">
+            <summary>
+            Gets or sets description of the conference.
+            </summary>
+            <value>The description.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.PhoneAccessEnabled">
+            <summary>
+            Gets or sets a value indicating whether phone access is enabled.
+            </summary>
+            <value><c>true</c> if phone access is enabled; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.IsPasscodeOptional">
+            <summary>
+            Gets or sets a value indicating whether passcode is optional for the conference.
+            </summary>
+            <value><c>true</c> if passcode is optional; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:BuildABot.UC.ConferenceInformation.ExpiryTime">
+            <summary>
+            Gets or sets the absolute date and time after which the conference can be deleted.
+            </summary>
+            <value>The expiry time.</value>
+            <remarks>  
+            The day and time must be between one year before, and 10 years after, 
+            the current date and time on the server.
+            If no value is supplied, expiry time is set to 8 hours.
+            </remarks>
+        </member>
+        <member name="T:BuildABot.UC.ConversationProperties">
+            <summary>
+            This class contains the properties related to conversation. 
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.ConversationProperties.#ctor(System.String,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.MessageHandlers.Reply,Microsoft.Rtc.Collaboration.InstantMessagingCall)">
+            <summary>
+            Initializes an instance of ConversationProperties class
+            </summary>
+            <param name="destinationUri">sip uri of destination.</param>
+            <param name="message">message sent by destination contact.</param>
+            <param name="outgoingMessage">reply to be sent to the destination uri.</param>
+            <param name="instantMessagingCall">An instance of instant messagin call.</param>
+        </member>
+        <member name="P:BuildABot.UC.ConversationProperties.DestinationUri">
+            <summary>
+            Gets or sets sip uri of destination.
+            </summary>
+        </member>
+        <member name="P:BuildABot.UC.ConversationProperties.Message">
+            <summary>
+            Gets or sets message sent by destination contact.
+            </summary>
+        </member>
+        <member name="P:BuildABot.UC.ConversationProperties.OutgoingMessage">
+            <summary>
+            Gets or sets reply to be sent to the destination uri.
+            </summary>
+        </member>
+        <member name="P:BuildABot.UC.ConversationProperties.InstantMessagingCall">
+            <summary>
+            Gets or sets an instance of instant messagin call.
+            </summary>
+        </member>
+        <member name="T:BuildABot.UC.StartConversationFailedException">
+            <summary>
+            Exception class for scenarios in which a conversation cannot be started.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.StartConversationFailedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.StartConversationFailedException"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.StartConversationFailedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.StartConversationFailedException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BuildABot.UC.StartConversationFailedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.StartConversationFailedException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:BuildABot.UC.StartConversationFailedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.StartConversationFailedException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="info"/> parameter is null. </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). </exception>
+        </member>
+        <member name="T:BuildABot.UC.UCBotHost">
+            <summary>
+            Hosts Unified Communications (Lync) bots.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.botAppEndPoint">
+            <summary>
+            ApplicationEndpoint is used as a Bot.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.helpText">
+            <summary>
+            Helptext is displayed if bot does not understand user's message.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.conferenceUris">
+            <summary>
+            Gets the list of all conferences attended by the bot.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.messageCalls">
+            <summary>
+            Gets the dictionary of all flows and calls.
+            This will help with getting conversation properties whenever instant message received by Bot.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.conversationFlowMisunderstandingAlerts">
+            <summary>
+            In case Bot didn't understand what user said, it doesn't make sense to show same help message over and over again when users are part of the conference because most likely they are chatting to themselves.
+            Thus, this collection will help with understanding when Bot need to show help message in case he didn't understand the user.
+            </summary>
+        </member>
+        <member name="F:BuildABot.UC.UCBotHost.bots">
+            <summary>
+            List of bots maintained by the UC host. Every user (actually every messaging flow) gets it's own bot.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.UCBotHost"/> class.
+            </summary>
+            <param name="applicationUserAgent"> Name of the application user agent.</param>
+            <param name="applicationUrn">The application urn.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.UCBotHost"/> class.
+            </summary>
+            <param name="applicationUserAgent"> Name of the application user agent.</param>
+            <param name="applicationUrn">The application urn.</param>
+            <param name="helpText">The help text to be displayed when the bot doesn't understand the user message.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.#ctor(System.String,System.String,System.String,BuildABot.UC.ConferenceInformation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.UCBotHost"/> class.
+            </summary>
+            <param name="applicationUserAgent"> Name of the application user agent.</param>
+            <param name="applicationUrn">The application urn.</param>  
+            <param name="helpText">The help text.</param>
+            <param name="conferenceInformation">The conference information that will be used to create a conference.
+            <example>
+             ConferenceInformation allow developer to set up the conference. So when developer creates an application and uses BuildABot framework he/she can add conferencing information as such:
+                <code>
+                     ConferenceInformation conferenceScheduleInformation = new ConferenceInformation(); // The base conference settings object, used to set the policies for the conference.
+                     conferenceInformation.IsPasscodeOptional = true; // This flag determines whether or not the passcode is optional for users joining the conference.
+                     conferenceInformation.Passcode = "1357924680"; // The conference passcode.
+                     conferenceInformation.Description = "Interesting Description"; // The verbose description of the conference.
+                     conferenceInformation.Subject = "This is subject of the conference"; // Subject will appear in the header.
+                     conferenceInformation.ExpiryTime = System.DateTime.Now.AddHours(5); // This field indicates the date and time after which the conference can be deleted.
+               </code>
+            </example>
+            </param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.UC.UCBotHost"/> class.
+            </summary>
+            <param name="applicationUserAgent"> Name of the application user agent.</param>
+            <param name="applicationUrn">The application urn.</param>
+            <param name="helpText">The help text.</param>
+            <param name="conferenceUri">The conference URI. Should contain only id and initiator.
+            <example>
+            sip:nryabov@microsoft.com;gruu;opaque=app:conf:focus:id:E339C29D99BBE4429930B21B0B623175
+            </example>
+            </param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.Run">
+            <summary>
+            Runs this instance.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.StartConversation(System.String,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.MessageHandlers.Reply)">
+            <summary>
+            Starts a conversation.
+            </summary>
+            <param name="destinationUri">The destination URI.</param>
+            <param name="message">The message.</param>
+            <param name="outgoingMessage">The outgoing message.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.ApplicationEndpointOwnerDiscovered(System.Object,Microsoft.Rtc.Collaboration.ApplicationEndpointSettingsDiscoveredEventArgs)">
+            <summary>
+            Event handler for event of end point settings are discovered.(Auto provisioning of application end point). 
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.ApplicationEndpointSettingsDiscoveredEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.SetupConference(Microsoft.Rtc.Collaboration.ConferenceManagement.ConferenceScheduleInformation)">
+            <summary>
+            Setup the conference if needed.
+            </summary>
+            <param name="conferenceScheduleInformation">The conference schedule information.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.JoinPublicConference(System.String)">
+            <summary>
+            Joins the public conference.
+            </summary>
+            <param name="conferenceUri">The conference URI.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.SetupConference">
+            <summary>
+            Setup the conference if needed.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.ScheduleConference(Microsoft.Rtc.Collaboration.ConferenceManagement.ConferenceScheduleInformation)">
+            <summary>
+            Schedules the conference.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.JoinConference(System.String)">
+            <summary>
+            Joins the conference.
+            </summary>
+            <param name="conferenceUri">The conference URI.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.CallConference">
+            <summary>
+            Calls the conference. This is appropriate after bot joined the conference.
+            </summary>
+            <remarks>
+            Placing the calls on the conference-connected conversation connects to the respective MCUs.
+            These calls may then be used to communicate with the conference/MCUs.
+            </remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.ConferenceInvitationReceived(System.Object,Microsoft.Rtc.Collaboration.ConferenceInvitationReceivedEventArgs)">
+            <summary>
+            Handles the ConferenceInvitationReceived event of the bot endpoint.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.ConferenceInvitationReceivedEventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.EndScheduleConference(System.IAsyncResult)">
+            <summary>
+            Occurs when conference is scheduled.
+            </summary>
+            <param name="argument">The argument.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.EndJoinConference(System.IAsyncResult)">
+            <summary>
+            Occurs when bot joined the conference.
+            </summary>
+            <param name="argument">The argument.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.EndCallEstablish(System.IAsyncResult)">
+            <summary>
+            Ends the call establish.
+            </summary>
+            <param name="argument">The argument.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.Call_StateChanged(System.Object,Microsoft.Rtc.Collaboration.CallStateChangedEventArgs)">
+            <summary>
+            Handles the StateChanged event of the Call control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.CallStateChangedEventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.ConferenceSession_StateChanged(System.Object,Microsoft.Rtc.Signaling.StateChangedEventArgs{Microsoft.Rtc.Collaboration.ConferenceSessionState})">
+            <summary>
+            Handles the StateChanged event of the ConferenceSession.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The event arguments.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.InstantMessagingCall_InstantMessagingFlowConfigurationRequested(System.Object,Microsoft.Rtc.Collaboration.InstantMessagingFlowConfigurationRequestedEventArgs)">
+            <summary>
+            Handles the InstantMessagingFlowConfigurationRequested event of the InstantMessagingCall control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.InstantMessagingFlowConfigurationRequestedEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Flow created indicates that there is a flow present to begin media operations with, and that it is no longer null.
+            </remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.Conversation_EscalateToConferenceRequested(System.Object,System.EventArgs)">
+            <summary>
+            Handler for the Conversation_EscalateToConferenceRequested event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The EventArgs instance containing the event data.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.EndEscalateConference(System.IAsyncResult)">
+            <summary>
+            Ends the escalation to conference.
+            </summary>
+            <param name="argument">The argument.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.InstantMessagingCallHandler(System.Object,Microsoft.Rtc.Collaboration.CallReceivedEventArgs{Microsoft.Rtc.Collaboration.InstantMessagingCall})">
+            <summary>
+            Handler for the InstantMessagingCall event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The CallReceivedEventArgs instance containing the event data.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.Call_InstantMessagingFlowConfigurationRequested(System.Object,Microsoft.Rtc.Collaboration.InstantMessagingFlowConfigurationRequestedEventArgs)">
+            <summary>
+            When an incoming instant messaging call is received, then this event handler is registered to handle the flow configuration requested event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.InstantMessagingCall_StateChanged(System.Object,Microsoft.Rtc.Collaboration.CallStateChangedEventArgs)">
+            <summary>
+            Handles the StateChanged event of the InstantMessagingCall.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.CallStateChangedEventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.InstantMessagingFlow_MessageReceived(System.Object,Microsoft.Rtc.Collaboration.InstantMessageReceivedEventArgs)">
+            <summary>
+            Handles the MessageReceived event of the InstantMessagingFlow control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.InstantMessageReceivedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.RegisterBot(Microsoft.Rtc.Collaboration.InstantMessagingFlow,System.String)">
+            <summary>
+            Setups a bot.
+            </summary>
+            <param name="instantMessagingFlow">The instant messaging flow.</param>
+            <param name="conferenceUri">The conference URI.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.RegisterBot(BuildABot.Core.Bot,Microsoft.Rtc.Collaboration.InstantMessagingFlow,System.String)">
+            <summary>
+            Setups a bot.
+            </summary>
+            <param name="bot">The bot.</param>
+            <param name="instantMessagingFlow">The instant messaging flow.</param>
+            <param name="conferenceUri">The conference URI.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.CreateBot">
+            <summary>
+            Creates the bot.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.SendReply(Microsoft.Rtc.Collaboration.InstantMessagingFlow,BuildABot.Core.MessageHandlers.Reply)">
+            <summary>
+            Sends the reply.
+            </summary>
+            <param name="instantMessagingFlow">The instant messaging flow.</param>
+            <param name="reply">The reply.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.SendReply(Microsoft.Rtc.Collaboration.InstantMessagingFlow,BuildABot.Core.MessageHandlers.ReplyMessage)">
+            <summary>
+            Sends the reply.
+            </summary>
+            <param name="instantMessagingFlow">The instant messaging flow.</param>
+            <param name="replyMessage">The reply message.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.OutgoingIMCallEstablished(System.IAsyncResult)">
+            <summary>
+            Outgoing instant messaging call is established.
+            </summary>
+            <param name="ar">The IAsyncResult ar.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.CallAcceptCompleted(System.IAsyncResult)">
+            <summary>
+            CallAcceptCompleted callback.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.InstantMessageFlow_StateChanged(System.Object,Microsoft.Rtc.Collaboration.MediaFlowStateChangedEventArgs)">
+            <summary>
+            Handles the StateChanged event of the InstantMessageFlow control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Rtc.Collaboration.MediaFlowStateChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.SendMessageCompleted(System.IAsyncResult)">
+            <summary>
+            SendMessageCompleted callback.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.ShutdownPlatform">
+            <summary>
+            Shuts down the platform.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.EndPlatformShutdown(System.IAsyncResult)">
+            <summary>
+            EndPlatformShutdown callback.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.RaiseErrorOccured(System.String,System.Exception)">
+            <summary>
+            Raises the ErrorOccured event.
+            </summary>
+            <param name="originator">The originating message (or context) that caused the error.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:BuildABot.UC.UCBotHost.RaiseConferenceCreatedEvent(Microsoft.Rtc.Collaboration.ConferenceSession)">
+            <summary>
+            Raises the conference created event.
+            </summary>
+            <param name="conferenceSession">The conference session.</param>
+        </member>
+        <member name="E:BuildABot.UC.UCBotHost.MessageReceived">
+            <summary>
+            Occurs whenever the UCHost receives a message.
+            </summary>
+        </member>
+        <member name="E:BuildABot.UC.UCBotHost.ErrorOccurred">
+            <summary>
+            Occurs when an error occurs.
+            </summary>
+        </member>
+        <member name="E:BuildABot.UC.UCBotHost.ConferenceCreated">
+            <summary>
+            Occurs when conference is created.
+            </summary>
+        </member>
+        <member name="E:BuildABot.UC.UCBotHost.Replied">
+            <summary>
+            Occurs when UC bot replied to the message.
+            </summary>
+        </member>
+        <member name="P:BuildABot.UC.UCBotHost.FeedbackEngine">
+            <summary>
+            Gets or sets the feedback engine.
+            </summary>
+            <value>The feedback engine.</value>
+        </member>
+        <member name="T:BuildABot.UC.UcBotHostHelper">
+            <summary>
+            Uc Bot Host Helper.
+            </summary>
+        </member>
+        <member name="M:BuildABot.UC.UcBotHostHelper.TryValidateConferenceUri(System.String@)">
+            <summary>
+            Tries to validate provided conference URI and return updated Uri and will state if it is valid or not.
+             1. Correct conference URI should start with SIP. 
+               If developer created a conference, it will add "conf:". Method will strip it.
+            2. Also need to trim any conversation-id if it was specified.
+               If developer specified the conversation id it will cause invalid uri SipException so method will strip it as well.
+               
+            <example>
+            Valid Conference Uri Example:
+            
+            sip:useralias@microsoft.com;gruu;opaque=app:conf:focus:id:E339C29D99BBE4429930B21B0B623175
+            </example>
+            </summary>
+            <param name="conferenceUri">The conference URI.</param>
+            <returns>True if conference uri is valid, otherwise false.</returns>
+        </member>
+        <member name="P:BuildABot.UC.UcBotHostHelper.CurrentHost">
+            <summary>
+            Gets or sets the current host.
+            </summary>
+            <value>
+            The current host.
+            </value>
+        </member>
+    </members>
+</doc>

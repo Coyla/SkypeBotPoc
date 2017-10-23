@@ -1,0 +1,1278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuildABot.Core</name>
+    </assembly>
+    <members>
+        <member name="T:BuildABot.Core.Bot">
+            <summary>
+            Conversational agent.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Bot.messageHandlerCandidates">
+            <summary>
+            The messageHandlerCandidates for the current conversation.
+            </summary>       
+        </member>
+        <member name="F:BuildABot.Core.Bot.isNewConversation">
+            <summary>
+            Whether the bot is awaiting a new conversation.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Bot.isCollectingFeedback">
+            <summary>
+            Whether the bot is in feedback collection mode.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Bot.originalMessage">
+            <summary>
+            The original (first) message of a conversation.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.Bot.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.Bot"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.Bot.CanProcess(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Determines whether this class can process the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>
+              <c>true</c> if this instance can process the specified message; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:BuildABot.Core.Bot.ProcessMessage(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Processes an incoming message, raising events accordingly.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BuildABot.Core.Bot.ProcessMessage(System.String)">
+            <summary>
+            Processes an incoming message, raising events accordingly.
+            </summary>
+            <param name="messageContent">Content of the message.</param>
+        </member>
+        <member name="M:BuildABot.Core.Bot.PreProcessMessageContent(System.String)">
+            <summary>
+            Pre-processes the message content, trimming the string and removing extra spaces.
+            </summary>
+            <param name="messageContent">The message content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.Bot.GetBestMessageHandler(System.Collections.Generic.Dictionary{BuildABot.Core.MessageHandlers.MessageHandler,BuildABot.Core.MessageHandlers.MessageHandlingResponse})">
+            <summary>
+            Gets the best message handler from a list of candidates.
+            </summary>
+            <param name="messageHandlerCandidates">The message handler candidates.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.Bot.GetMessageHandlerCandidates(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Gets the message handler candidates for the specified message, i.e., the message handlers which return a confidence
+            higher than one for the current message.
+            </summary>
+            <param name="message">The message info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.Bot.ProcessMessage(BuildABot.Core.MessageHandlers.Message,System.Boolean)">
+            <summary>
+            Processes an incoming message, raising events accordingly. This is the most important method of all bot functionality.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="isReprocessing">if set to <c>true</c> [is reprocessing].</param>
+        </member>
+        <member name="M:BuildABot.Core.Bot.ProcessNewMessage(BuildABot.Core.MessageHandlers.Message,System.Collections.Generic.Dictionary{BuildABot.Core.MessageHandlers.MessageHandler,BuildABot.Core.MessageHandlers.MessageHandlingResponse})">
+            <summary>
+            Processes a new message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageHandlerCandidates">The message handler candidates.</param>
+        </member>
+        <member name="M:BuildABot.Core.Bot.InvokeMessageHandler(BuildABot.Core.MessageHandlers.MessageHandler,BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Invokes a message handler.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageHandler">The message handler.</param>
+        </member>
+        <member name="M:BuildABot.Core.Bot.RaiseReplied(BuildABot.Core.MessageHandlers.Reply,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.ReplyContext,BuildABot.Core.MessageHandlers.MessageHandler)">
+            <summary>
+            Raises the replied event.
+            </summary>
+            <param name="reply">The reply.</param>
+            <param name="message">The message.</param>
+            <param name="replyContext">The reply context.</param>
+            <param name="messageHandler">The message handler.</param>
+        </member>
+        <member name="E:BuildABot.Core.Bot.Replied">
+            <summary>
+            Occurs  whenever the bot sends reply. 
+            </summary>
+        </member>
+        <member name="E:BuildABot.Core.Bot.MessageReceived">
+            <summary>
+            Occurs whenever the bot receives a message.
+            </summary>
+        </member>
+        <member name="E:BuildABot.Core.Bot.FailedToUnderstand">
+            <summary>
+            Occurs whenever the bot fails to understand the user.
+            </summary>
+        </member>
+        <member name="P:BuildABot.Core.Bot.UseEmoticons">
+            <summary>
+            Sets a value indicating whether bots should use emoticons.
+            </summary>
+            <value><c>true</c> if bots should use emoticons; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:BuildABot.Core.Bot.MessageHandler">
+            <summary>
+            The message handler that the bot is using to handle the current conversation.
+            </summary>
+        </member>
+        <member name="P:BuildABot.Core.Bot.GiveUpOnNegativeFeedback">
+            <summary>
+            Gets or sets a value indicating whether this bot should give up on trying to handle the user
+            request after receiving negative feedback.
+            </summary>
+            <value>
+            <c>true</c> if the bot should give up on trying to handle the user request after receiving negative feedback; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.Bot.FeedbackEngine">
+            <summary>
+            Gets or sets this bot's feedback engine.
+            </summary>
+            <value>The feedback engine.</value>
+        </member>
+        <member name="P:BuildABot.Core.Bot.ConversationReplyCount">
+            <summary>
+            Gets or sets the conversation reply count.
+            </summary>
+            <value>The conversation iteration.</value>
+        </member>
+        <member name="T:BuildABot.Core.Feedback.FeedbackEventHandler">
+            <summary>
+            FeedbackEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.Feedback.FeedbackCollectedEventArgs">
+            <summary>
+            Event arguments for the FeedbackCollected delegate.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.Feedback.FeedbackCollectedEventArgs.#ctor(BuildABot.Core.Feedback.FeedbackType,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.Feedback.FeedbackCollectedEventArgs"/> class.
+            </summary>
+            <param name="feedbackType">Type of the feedback.</param>
+            <param name="feedbackMessage">The feedback message.</param>
+            <param name="originalMessage">The original message.</param>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackCollectedEventArgs.FeedbackType">
+            <summary>
+            Gets or sets the type of the feedback.
+            </summary>
+            <value>The type of the feedback.</value>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackCollectedEventArgs.OriginalMessage">
+            <summary>
+            Gets or sets the original message from the user. Not to be confused with the message 
+            entered by the user to express feedback ("yes", "no", etc.).
+            </summary>
+            <value>The original message.</value>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackCollectedEventArgs.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message. This is the message that the user entered when the bot requested feedback.
+            </summary>
+            <value>The feedback message.</value>
+        </member>
+        <member name="T:BuildABot.Core.Feedback.FeedbackEngine">
+            <summary>
+            The feedback engine used for collecting the bot's client feedback.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.Feedback.FeedbackEngine.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.Feedback.FeedbackEngine"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.Feedback.FeedbackEngine.ProcessFeedback(BuildABot.Core.MessageHandlers.Message,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.Feedback.FeedbackType@)">
+            <summary>
+            Processes the feedback.
+            </summary>
+            <param name="feedbackMessage">The feedback message.</param>
+            <param name="originalMessage">The original message.</param>
+            <param name="feedbackType">Type of the feedback.</param>
+            <returns>
+            The feedback type corresponding the the message.
+            </returns>
+        </member>
+        <member name="E:BuildABot.Core.Feedback.FeedbackEngine.FeedbackCollected">
+            <summary>
+            Occurs when feedback is collected.
+            </summary>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackEngine.PositiveFeedbackPattern">
+            <summary>
+            Gets or sets the positive feedback pattern.
+            </summary>
+            <value>The positive feedback pattern.</value>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackEngine.NegativeFeedbackPattern">
+            <summary>
+            Gets or sets the negative feedback pattern.
+            </summary>
+            <value>The negative feedback pattern.</value>
+        </member>
+        <member name="P:BuildABot.Core.Feedback.FeedbackEngine.FeedbackRequest">
+            <summary>
+            Gets the feedback request.
+            </summary>
+            <value>The feedback request.</value>
+        </member>
+        <member name="T:BuildABot.Core.Feedback.FeedbackType">
+            <summary>
+            Type of feedback provided by the bot client.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Feedback.FeedbackType.NotProvided">
+            <summary>
+            No feedback provided by the user.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Feedback.FeedbackType.Positive">
+            <summary>
+            Positive feedback.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.Feedback.FeedbackType.Negative">
+            <summary>
+            Negative feedback.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException">
+            <summary>
+            Exception that should be raised when a done message handler is invoked.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.DoneMessageHandlerStateCalledException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info"/> parameter is null.
+            </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">
+            The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0).
+            </exception>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.InputMatcher">
+            <summary>
+            Strategy class to determine whether the user input matches the provided regular expression pattern.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.InputMatcher.match">
+            <summary>
+            The pattern match.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.InputMatcher.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.InputMatcher"/> class.
+            </summary>
+            <param name="regexPattern">The regular expression pattern to look for.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.InputMatcher.CanHandle(System.String)">
+            <summary>
+            Determines whether this instance can handle the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>
+            	<c>true</c> if this instance can handle the specified message; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.InputMatcher.RegexPattern">
+            <summary>
+            Gets or sets the regex patterns.
+            </summary>
+            <value>The regex patterns.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.InputMatcher.Item(System.String)">
+            <summary>
+            Gets the value (<see cref="T:System.String"/>) for the specified regex pattern group name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.StateHandler">
+            <summary>
+            Defines methods that handle states.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.MessageHandler">
+            <summary>
+            Handle user messages.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageHandler.inputMatcher">
+            <summary>
+            This message handler's input matcher.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageHandler.nextStateHandler">
+            <summary>
+            The next state handler (method). 
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+            <param name="requiresFeedback">if set to <c>true</c> [requires feedback].</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+            <param name="requiresFeedback">if set to <c>true</c> [requires feedback].</param>
+            <param name="abortOnNeverMind">if set to <c>true</c> [abort on never mind].</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.CanHandle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Determines whether this instance can handle the specified message.
+            </summary>
+            <param name="message">The message info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.GetInitialHandlingText">
+            <summary>
+            Gets the initial handling text. By this time, you can already call the inputMatcher index to request regex group values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandler.Handle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Handles the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.DefaultConfidence">
+            <summary>
+            Gets or sets the default confidence.
+            </summary>
+            <value>The default confidence.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.RequiresFeedback">
+            <summary>
+            Gets or sets a value indicating whether this message handler requires feedback from the user.
+            </summary>
+            <value><c>true</c> if requires feedback; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.InitialStateHandler">
+            <summary>
+            Gets the initial state handler.
+            </summary>
+            <value>The initial state handler.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.AbortOnNeverMind">
+            <summary>
+            Gets or sets a value indicating whether this state machine handler should abort hanlding messages if the
+            user says "never mind" or similar.
+            </summary>
+            <value><c>true</c> if [abort on never mind]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.InitialHandlingText">
+            <summary>
+            Gets or sets the initial handling text.
+            </summary>
+            <value>The initial handling text.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.Item(System.String)">
+            <summary>
+            Gets the parameter value given the specified parameter name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandler.Done">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:BuildABot.Core.MessageHandlers.MessageHandler"/> is done.
+            </summary>
+            <value><c>true</c> if done; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.MessageHandlerFactory">
+            <summary>
+            Factory of message handlers.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageHandlerFactory.messageHandlers">
+            <summary>
+            List of message handlers to be injected into this factory via MEF.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandlerFactory.InitializeMessageHandlers">
+            <summary>
+            Initializes the message handlers.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandlerFactory.ComposeMessageHandlers">
+            <summary>
+            Composes the message handlers.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.MessageHandlingResponse">
+            <summary>
+            Response of a message handler.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandlingResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandlingResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageHandlingResponse.#ctor(System.Double,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.MessageHandlingResponse"/> class.
+            </summary>
+            <param name="confidence">The confidence.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandlingResponse.Confidence">
+            <summary>
+            A value from 0 to 1 that tells how confident the message handler can handle the message.
+            </summary>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.MessageHandlingResponse.InitialHandlingText">
+            <summary>
+            The text to be displayed before the request is handled.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.Message">
+            <summary>
+            Message meta-information.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Message.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Message"/> class.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Message.#ctor(System.String,System.String,System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Message"/> class.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="senderDisplayName">Display name of the sender.</param>
+            <param name="senderAlias">The sender alias.</param>
+            <param name="timeStamp">The timestamp.</param>
+            <param name="conversationId">The conversation id.</param>
+            <param name="conferenceUri">The conference URI.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Message.#ctor(System.String,BuildABot.Core.MessageHandlers.Sender)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Message"/> class.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="sender">The sender.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Message.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.Content">
+            <summary>
+            Gets or sets the content.
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.Sender">
+            <summary>
+            Gets or sets the sender.
+            </summary>
+            <value>
+            The sender.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.SenderDisplayName">
+            <summary>
+            Gets or sets the display name of the sender.
+            </summary>
+            <value>The display name of the sender.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.SenderAlias">
+            <summary>
+            Gets or sets the sender alias.
+            </summary>
+            <value>The sender alias.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.TimeStamp">
+            <summary>
+            Gets or sets the sender timestamp.
+            </summary>
+            <value>When the message was sent.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.ConversationId">
+            <summary>
+            Gets or sets the conversation id.
+            </summary>
+            <value>
+            The conversation id.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Message.ConferenceUri">
+            <summary>
+            Gets or sets the conference URI.
+            </summary>
+            <value>
+            The conference URI.
+            </value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.MessageLog">
+            <summary>
+            Keeps track of all conversations happening in the Bot for last 24 hours.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLog.MessagesLogLiveTimeInHours">
+            <summary>
+            Keep log for last 24 hours only.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLog.messageCollection">
+            <summary>
+            Keeps information about all available messages.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.AddMessageToLog(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Adds the message to log.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.AddMessageToLog(System.String)">
+            <summary>
+            Adds the message to log.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.AddMessageToLog(System.String,System.String)">
+            <summary>
+            Adds the message to log.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="senderName">Name of the sender.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetConferenceUris">
+            <summary>
+            Gets the conference uri.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetConversationIds">
+            <summary>
+            Gets the conference ids.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetConferenceUrls">
+            <summary>
+            Gets the conference fully formatted conference URLs.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetMessages">
+            <summary>
+            Gets the messages from the log.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetMessages(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the messages from the log.
+            </summary>
+            <param name="startTime">The start time.</param>
+            <param name="endTime">The end time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetMessages(System.Collections.Generic.KeyValuePair{BuildABot.Core.MessageHandlers.MessageLogParameters,System.String})">
+            <summary>
+            Gets the messages from the log for the specified query parameter.
+            </summary>
+            <param name="queryParameter">The query parameter where key is parameter name</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.GetMessages(System.Collections.Generic.KeyValuePair{BuildABot.Core.MessageHandlers.MessageLogParameters,System.String},System.DateTime,System.DateTime)">
+            <summary>
+            Gets the messages from the log for the specified query parameter.
+            </summary>
+            <param name="queryParameter">The query parameter where key is parameter name</param>
+            <param name="startTime">The start time.</param>
+            <param name="endTime">The end time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.MessageLog.ClearOldMessages">
+            <summary>
+            Clears the old messages.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.MessageLogParameters">
+            <summary>
+            Message Log Parameters available for querying the log.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLogParameters.ConversationId">
+            <summary>
+            Conversation Id.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLogParameters.ConferenceUri">
+            <summary>
+            Conference Uri.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLogParameters.UserAlias">
+            <summary>
+            User Alias.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.MessageLogParameters.UserName">
+            <summary>
+            User Name.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.ActionQAHandler">
+            <summary>
+            Delegate for QA's, that defines an action for creating an answer from a question.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.ActionQA">
+            <summary>
+            QA that performs an action to get an answer from a question.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.QA">
+            <summary>
+            A question/answer (QA) pair, that can be used in conversations that require no state and very little processing.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QA.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.QAs.QA"/> class, replacing special regular expression characters in the
+            provided question by their literals.
+            </summary>
+            <param name="question">The question.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QA.GetAnswer(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Gets the answer.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.QAs.QA.Question">
+            <summary>
+            Gets or sets the question.
+            </summary>
+            <value>The question.</value>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.ActionQA.#ctor(System.String,BuildABot.Core.MessageHandlers.QAs.ActionQAHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.QAs.ActionQA"/> class.
+            </summary>
+            <param name="question">The question.</param>
+            <param name="actionQAHandler">The action QA handler.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.ActionQA.GetAnswer(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Gets the answer.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.QAHelper">
+            <summary>
+            Helper methods for QA's.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QAHelper.AddBatchRandomQAs(System.Collections.Generic.List{BuildABot.Core.MessageHandlers.QAs.QA},System.String[],System.String[])">
+            <summary>
+            Adds a batch of RandomQA's to a list of QA's.
+            </summary>
+            <param name="qas">The QA's.</param>
+            <param name="questions">The questions.</param>
+            <param name="answers">The answers.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QAHelper.AddBatchActionQAs(System.Collections.Generic.List{BuildABot.Core.MessageHandlers.QAs.QA},BuildABot.Core.MessageHandlers.QAs.ActionQAHandler,System.String[])">
+            <summary>
+            Adds a batch of ActionQA's to a list of QA's.
+            </summary>
+            <param name="qas">The QA's.</param>
+            <param name="actionQAHandler">The action QA handler.</param>
+            <param name="question">The question.</param>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler">
+            <summary>
+            Message handler that manipulate simple question/answer (QA) pairs,
+            that can be used in conversations that require no state and very little processing.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler">
+            <summary>
+            Message handler with only one single state.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+            <param name="requiresFeedback">if set to <c>true</c> [requires feedback].</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.SingleStateMessageHandler"/> class.
+            </summary>
+            <param name="regexPattern">The regex pattern.</param>
+            <param name="initialHandlingText">The initial handling text.</param>
+            <param name="requiresFeedback">if set to <c>true</c> [requires feedback].</param>
+            <param name="abortOnNeverMind">if set to <c>true</c> [abort on never mind].</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.SingleStateHandle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Handles the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.Handle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Handles the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.SingleStateMessageHandler.InitialStateHandler">
+            <summary>
+            Gets the start state handler.
+            </summary>
+            <value>The start state handler.</value>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler.CanHandle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Determines whether this instance can handle the specified message.
+            </summary>
+            <param name="message">The message info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler.Handle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Handles the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.QAs.QAMessageHandler.QAs">
+            <summary>
+            Gets or sets the list of QA's.
+            </summary>
+            <value>The list of QA's..</value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.RandomQA">
+            <summary>
+            A QA entity that represents a question and a set of random answers.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.RandomQA.#ctor(System.String,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.QAs.RandomQA"/> class.
+            </summary>
+            <param name="question">The question.</param>
+            <param name="answers">The answers.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.RandomQA.GetAnswer(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Gets the answer. The answer is randomly selected from this RandomQA's set of answers.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.QAs.RandomQA.Answers">
+            <summary>
+            Gets or sets the answers.
+            </summary>
+            <value>The answers.</value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.SenderKind">
+            <summary>
+            The sender kind.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.SenderKind.Unknown">
+            <summary>
+            The sender kind is unknown.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.SenderKind.User">
+            <summary>
+            The sender is an end-user.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.SenderKind.System">
+            <summary>
+            The sender is a system or application.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.Sender">
+            <summary>
+            Message sender.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Sender.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Sender"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Sender.#ctor(System.String,System.String,BuildABot.Core.MessageHandlers.SenderKind)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Sender"/> class.
+            </summary>
+            <param name="displayName">The display name.</param>
+            <param name="alias">The alias.</param>
+            <param name="kind">The kind.</param>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Sender.DisplayName">
+            <summary>
+            Gets or sets the display name.
+            </summary>
+            <value>
+            The display name.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Sender.Alias">
+            <summary>
+            Gets or sets the alias.
+            </summary>
+            <value>
+            The alias.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Sender.Kind">
+            <summary>
+            Gets or sets the kind.
+            </summary>
+            <value>
+            The kind.
+            </value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.QAs.StaticQAMessageHandler">
+            <summary>
+            Handles static questions and answers defined in a XML file with the following structure:
+            <bot>
+                <parameterlessQAs>
+                    <qa>
+                        <question>question1</question>
+                        <answer>answer1</answer>
+                    </qa>
+                    <qa>
+                        <question>question2</question>
+                        <answer>answer2a</answer>
+                        <answer>answer2b</answer>
+                    </qa>
+                    ...
+                </parameterlessQAs>
+            </bot>
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.QAs.StaticQAMessageHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.QAs.StaticQAMessageHandler"/> class.
+            </summary>
+            <param name="xmlFileName">Name of the XML file.</param>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.Reply">
+            <summary>
+            Reply to a user, composed by a set of reply messages.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Reply"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Reply"/> class.
+            </summary>
+            <param name="logReply">if set to <c>true</c> if need to log reply.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Reply"/> class containing only one message.
+            </summary>
+            <param name="messageContent">Content of the message.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Reply"/> class.
+            </summary>
+            <param name="messageContent">Content of the message.</param>
+            <param name="logReply">if set to <c>true</c> [log reply].</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.#ctor(BuildABot.Core.MessageHandlers.ReplyMessageCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.Reply"/> class.
+            </summary>
+            <param name="replyMessages">The reply messages.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.Add(BuildABot.Core.MessageHandlers.ReplyMessage)">
+            <summary>
+            Adds the specified reply message.
+            </summary>
+            <param name="replyMessage">The reply message.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.Add(System.String)">
+            <summary>
+            Adds a plain text message to this reply.
+            </summary>
+            <param name="content">The message content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.AddRtfMessage(System.String)">
+            <summary>
+            Adds an RTF message to this reply.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.Reply.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Reply.LogReply">
+            <summary>
+            Gets or sets a value indicating whether to log reply.
+            </summary>
+            <value>
+              <c>true</c> if need to log reply; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Reply.Messages">
+            <summary>
+            Gets or sets the messages of this reply.
+            </summary>
+            <value>The messages.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.Reply.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:BuildABot.Core.MessageHandlers.ReplyMessage"/> with the specified message index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.ReplyMessage">
+            <summary>
+            Reply message.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.ReplyMessage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.ReplyMessage"/> class.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.ReplyMessage.#ctor(System.String,System.Net.Mime.ContentType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.ReplyMessage"/> class.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="contentType">Type of the content.</param>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.ReplyMessage.PlainTextContent">
+            <summary>
+            Plain text message content type.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.MessageHandlers.ReplyMessage.RtfTextContent">
+            <summary>
+            RTF message content type.
+            </summary>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.ReplyMessage.Content">
+            <summary>
+            Gets or sets the message content.
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="P:BuildABot.Core.MessageHandlers.ReplyMessage.ContentType">
+            <summary>
+            Gets or sets the type of the message content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.ReplyMessageCollection">
+            <summary>
+            A collection of reply messages.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.ReplyMessageCollection.Add(System.String)">
+            <summary>
+            Adds the specified content to this collection of reply messages.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.ReplyMessageCollection.Add(System.String,System.Net.Mime.ContentType)">
+            <summary>
+            Adds the specified content to this collection of reply messages.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="contentType">Type of the content.</param>
+        </member>
+        <member name="T:BuildABot.Core.MessageHandlers.StaticSingleStateMessageHandler">
+            <summary>
+            Single state message handler that reads parameterized questions and answers from a static XML file with the following structure:
+            <bot>
+                <parameterizedQA regexPattern="what is [term]">
+                    <match>
+                        <term>Term value capture by the regexPattern above</term>
+                        <reply>Reply for above term. Example below.</reply>
+                    </match>
+                    <match>
+                        <term>TLA</term>
+                        <reply>Three-letter acronym</reply>
+                    </match>
+                 </parameterizedQA>
+            </bot>
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.StaticSingleStateMessageHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageHandlers.StaticSingleStateMessageHandler"/> class.
+            </summary>
+            <param name="xmlFileName">Name of the XML file.</param>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.StaticSingleStateMessageHandler.CanHandle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Determines whether this instance can handle the specified message.
+            </summary>
+            <param name="message">The message info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Core.MessageHandlers.StaticSingleStateMessageHandler.Handle(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Handles the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildABot.Core.ReplyEventHandler">
+            <summary>
+            ReplyEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.MessageEventHandler">
+            <summary>
+            MessageEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.ErrorEventHandler">
+            <summary>
+            ErrorEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.ConferenceCreatedEventHandler">
+            <summary>
+            ConferenceCreatedEventHandler delegate.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:BuildABot.Core.ReplyContext">
+            <summary>
+            The type of the reply.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.ReplyContext.RegularReplyMessage">
+            <summary>
+            The reply is a regular reply message.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.ReplyContext.FeedbackRequest">
+            <summary>
+            The reply is a request for feedback.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.ReplyContext.FeedbackResponse">
+            <summary>
+            The reply is for acknowledging a response to feedback.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Core.ReplyContext.InitialHandlingText">
+            <summary>
+            The reply is initial text prior to handling a request.
+            </summary>
+        </member>
+        <member name="T:BuildABot.Core.ReplyEventArgs">
+            <summary>
+            Event arguments for the reply class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.ReplyEventArgs.#ctor(BuildABot.Core.MessageHandlers.Reply,BuildABot.Core.MessageHandlers.Message,BuildABot.Core.ReplyContext,System.Int32,BuildABot.Core.MessageHandlers.MessageHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.ReplyEventArgs"/> class.
+            </summary>
+            <param name="reply">The reply.</param>
+            <param name="message">The message.</param>
+            <param name="replyContext">The reply context.</param>
+            <param name="conversationReplyCount">The conversation reply count.</param>
+            <param name="messageHandler">The message handler.</param>
+        </member>
+        <member name="P:BuildABot.Core.ReplyEventArgs.Reply">
+            <summary>
+            Gets or sets the reply.
+            </summary>
+            <value>The reply.</value>
+        </member>
+        <member name="P:BuildABot.Core.ReplyEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="P:BuildABot.Core.ReplyEventArgs.ReplyContext">
+            <summary>
+            Gets or sets the reply context.
+            </summary>
+            <value>The reply context.</value>
+        </member>
+        <member name="P:BuildABot.Core.ReplyEventArgs.ConversationReplyCount">
+            <summary>
+            Gets or sets the conversation reply count.
+            </summary>
+            <value>The conversation reply count.</value>
+        </member>
+        <member name="P:BuildABot.Core.ReplyEventArgs.MessageHandler">
+            <summary>
+            Gets or sets the message handler that handled the message. It will be null if the reply is sent
+            not as a result of a message handler (such as when feedback is being requested or responded).
+            </summary>
+            <value>The message handler.</value>
+        </member>
+        <member name="T:BuildABot.Core.MessageEventArgs">
+            <summary>
+            Event args for events handling messages.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.MessageEventArgs.#ctor(BuildABot.Core.MessageHandlers.Message)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.MessageEventArgs"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="P:BuildABot.Core.MessageEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="T:BuildABot.Core.ErrorEventArgs">
+            <summary>
+            Event args for events handling errors.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Core.ErrorEventArgs.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BuildABot.Core.ErrorEventArgs"/> class.
+            </summary>
+            <param name="originator">The originator.</param>
+            <param name="exception">The originating message (or context) that caused the error.</param>
+        </member>
+        <member name="P:BuildABot.Core.ErrorEventArgs.Originator">
+            <summary>
+            Gets or sets the originating message (or context) that caused the error.
+            </summary>
+            <value>The originating message (or context) that caused the error.</value>
+        </member>
+        <member name="P:BuildABot.Core.ErrorEventArgs.Exception">
+            <summary>
+            Gets or sets the exception.
+            </summary>
+            <value>The exception.</value>
+        </member>
+    </members>
+</doc>
