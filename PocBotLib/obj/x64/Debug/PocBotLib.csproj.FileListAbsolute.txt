@@ -11,3 +11,5 @@ C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Debug\PocBotLib.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Debug\PocBotLib.dll
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Debug\PocBotLib.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Debug\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Debug\RequestApi.pdb

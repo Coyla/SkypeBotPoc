@@ -33,7 +33,6 @@ namespace LyncBotConsole
                 Logger.Debug("ucBotHost init: " + ucBotHost.ToString());
                 Logger.Debug("ucBot is running...");
                 ucBotHost.Run();
-                
             }
             catch (Exception e) {
                 Logger.Debug("error : " + e);

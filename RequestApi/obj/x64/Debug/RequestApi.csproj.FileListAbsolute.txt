@@ -1,0 +1,4 @@
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Debug\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Debug\RequestApi.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Debug\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Debug\RequestApi.pdb

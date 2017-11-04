@@ -1,0 +1,15 @@
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\PocBotLib.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\PocBotLib.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Core.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Util.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Core.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Core.xml
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Util.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\BuildABot.Util.xml
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\obj\Release\PocBotLib.csprojResolveAssemblyReference.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\obj\Release\PocBotLib.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\obj\Release\PocBotLib.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\Release\RequestApi.pdb

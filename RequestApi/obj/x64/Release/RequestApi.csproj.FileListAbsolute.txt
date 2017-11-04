@@ -1,0 +1,5 @@
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\RequestApi.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.csprojResolveAssemblyReference.cache
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.pdb

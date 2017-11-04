@@ -1,0 +1,4 @@
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\bin\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\bin\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\Release\Log.pdb

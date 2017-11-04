@@ -14,3 +14,5 @@ C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotCons
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Debug\GenericBotConsole.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Debug\GenericBotConsole.exe
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Debug\GenericBotConsole.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Debug\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Debug\RequestApi.pdb

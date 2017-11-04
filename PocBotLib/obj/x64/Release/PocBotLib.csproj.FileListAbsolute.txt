@@ -8,6 +8,7 @@ C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\BuildABot.Core.xml
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\BuildABot.Util.pdb
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\BuildABot.Util.xml
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Release\PocBotLib.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Release\PocBotLib.dll
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Release\PocBotLib.pdb
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\RequestApi.dll
+C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Release\PocBotLib.csprojResolveAssemblyReference.cache

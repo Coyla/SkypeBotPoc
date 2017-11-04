@@ -1,5 +1,4 @@
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\bin\x64\Debug\Log.dll
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\bin\x64\Debug\Log.pdb
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\obj\x64\Debug\Log.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\obj\x64\Debug\Log.dll
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\obj\x64\Debug\Log.pdb

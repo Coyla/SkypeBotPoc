@@ -86,9 +86,9 @@
       <Project>{90185518-f075-4676-bf29-c10836fba7e1}</Project>
       <Name>Log</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PocBotLib\PocBotLib.csproj">
+    <ProjectReference Include="..\PocBotLib\EchoHandler.csproj">
       <Project>{3d87c07b-ae94-432d-b40b-b903f5716412}</Project>
-      <Name>PocBotLib</Name>
+      <Name>EchoHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

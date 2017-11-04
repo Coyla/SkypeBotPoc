@@ -43,6 +43,7 @@ namespace GenericBotConsole
                 }
             }
             catch (Exception ex) {
+                
                 Logger.Debug("error " + ex);
             }
           
