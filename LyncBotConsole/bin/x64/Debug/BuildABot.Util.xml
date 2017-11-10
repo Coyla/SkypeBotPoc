@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuildABot.Util</name>
+    </assembly>
+    <members>
+        <member name="T:BuildABot.Util.Emoticons">
+            <summary>
+            Class for manipulating emoticons.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Util.Emoticons.#cctor">
+            <summary>
+            Initializes the <see cref="T:BuildABot.Util.Emoticons"/> class.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Util.Emoticons.GetEmoticon(BuildABot.Util.Emoticons.Emoticon)">
+            <summary>
+            Gets the emoticon as string.
+            </summary>
+            <param name="emoticon">The emoticon.</param>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Enabled">
+            <summary>
+            Gets or sets a value indicating whether <see cref="T:BuildABot.Util.Emoticons"/> are enabled.
+            </summary>
+            <value><c>true</c> if enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Telephone">
+            <summary>
+            Gets the telephone emoticon.
+            </summary>
+            <value>The telephone emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.BrokenHeart">
+            <summary>
+            Gets the broken heart emoticon.
+            </summary>
+            <value>The broken heart emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.OK">
+            <summary>
+            Gets the OK emoticon.
+            </summary>
+            <value>The OK emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.GottaRun">
+            <summary>
+            Gets the gotta run emoticon.
+            </summary>
+            <value>The gotta run emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Nerd">
+            <summary>
+            Gets the nerd emoticon.
+            </summary>
+            <value>The nerd emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Clock">
+            <summary>
+            Gets the clock emoticon.
+            </summary>
+            <value>The clock emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Beer">
+            <summary>
+            Gets the beer emoticon.
+            </summary>
+            <value>The beer emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sunglasses">
+            <summary>
+            Gets the sunglasses emoticon.
+            </summary>
+            <value>The sunglasses emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Smile">
+            <summary>
+            Gets the smile emoticon.
+            </summary>
+            <value>The smile emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.BigSmile">
+            <summary>
+            Gets the big smile emoticon.
+            </summary>
+            <value>The big smile emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Wink">
+            <summary>
+            Gets the wink emoticon.
+            </summary>
+            <value>The wink emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Embarassed">
+            <summary>
+            Gets the embarassed emoticon.
+            </summary>
+            <value>The embarassed emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.TongueOut">
+            <summary>
+            Gets the tongue out emoticon.
+            </summary>
+            <value>The tongue out emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sleepy">
+            <summary>
+            Gets the sleepy emoticon.
+            </summary>
+            <value>The sleepy emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sun">
+            <summary>
+            Gets the sun emoticon.
+            </summary>
+            <value>The sun emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.HalfMoon">
+            <summary>
+            Gets the half moon emoticon.
+            </summary>
+            <value>The half moon emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Thinking">
+            <summary>
+            Gets the thinking emoticon.
+            </summary>
+            <value>The thinking emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Exclamation">
+            <summary>
+            Gets the exclamation emoticon.
+            </summary>
+            <value>The exclamation emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sad">
+            <summary>
+            Gets the sad emoticon.
+            </summary>
+            <value>The sad emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.WorkItem">
+            <summary>
+            Gets the work item emoticon.
+            </summary>
+            <value>The work item emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Girl">
+            <summary>
+            Gets the girl emoticon.
+            </summary>
+            <value>The girl emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Boy">
+            <summary>
+            Gets the boy emoticon.
+            </summary>
+            <value>The boy emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Snail">
+            <summary>
+            Gets the snail emoticon.
+            </summary>
+            <value>The snail emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Bye">
+            <summary>
+            Gets the bye emoticon.
+            </summary>
+            <value>The bye emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Online">
+            <summary>
+            Gets the online emoticon.
+            </summary>
+            <value>The online emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Busy">
+            <summary>
+            Gets the busy emoticon.
+            </summary>
+            <value>The busy emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.QuestionMark">
+            <summary>
+            Gets the question mark emoticon.
+            </summary>
+            <value>The question mark emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Gift">
+            <summary>
+            Gets the gift emoticon.
+            </summary>
+            <value>The gift emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Agree">
+            <summary>
+            Gets the agree emoticon.
+            </summary>
+            <value>The agree emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Email">
+            <summary>
+            Gets the email emoticon.
+            </summary>
+            <value>The email emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Umbrella">
+            <summary>
+            Gets the umbrella emoticon.
+            </summary>
+            <value>The umbrella emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Storm">
+            <summary>
+            Gets the storm emoticon.
+            </summary>
+            <value>The storm emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Money">
+            <summary>
+            Gets the money emoticon.
+            </summary>
+            <value>The money emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.CoffeeCup">
+            <summary>
+            Gets the coffee cup emoticon.
+            </summary>
+            <value>The coffee cup emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Idea">
+            <summary>
+            Gets the idea emoticon.
+            </summary>
+            <value>The idea emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Computer">
+            <summary>
+            Gets the computer emoticon.
+            </summary>
+            <value>The computer emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Star">
+            <summary>
+            Gets the star emoticon.
+            </summary>
+            <value>The star emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Surprised">
+            <summary>
+            Gets the surprised emoticon.
+            </summary>
+            <value>The surprised emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.HotSmile">
+            <summary>
+            Gets the hot smiley emoticon.
+            </summary>
+            <value>The hot smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.AngrySmile">
+            <summary>
+            Gets the angry smiley emoticon.
+            </summary>
+            <value>The angry smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.ConfusedSmile">
+            <summary>
+            Gets the confused smiley emoticon.
+            </summary>
+            <value>The confused smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Crying">
+            <summary>
+            Gets the crying emoticon.
+            </summary>
+            <value>The crying emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Disappointed">
+            <summary>
+            Gets the disappointed emoticon.
+            </summary>
+            <value>The disappointed emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.BaringTeeth">
+            <summary>
+            Gets the baring teeth emoticon.
+            </summary>
+            <value>The baring teeth emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sick">
+            <summary>
+            Gets the sick smiley emoticon.
+            </summary>
+            <value>The sick smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Party">
+            <summary>
+            Gets the party smiley emoticon.
+            </summary>
+            <value>The party smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.DontTellAnyone">
+            <summary>
+            Gets the don't tell anyone smiley emoticon.
+            </summary>
+            <value>The don't tell anyone smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Secret">
+            <summary>
+            Gets the secret telling smiley emoticon.
+            </summary>
+            <value>The secret telling smiley emoticon.</value>      
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Sarcastic">
+            <summary>
+            Gets the sarcastic smiley emoticon.
+            </summary>
+            <value>The sarcastic smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Heart">
+            <summary>
+            Gets the red heart emoticon.
+            </summary>
+            <value>The red heart emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Drinks">
+            <summary>
+            Gets the drinks emoticon.
+            </summary>
+            <value>The drinks emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Catface">
+            <summary>
+            Gets the cat face smiley emoticon.
+            </summary>
+            <value>The cat face smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Dogface">
+            <summary>
+            Gets the dog face smiley emoticon.
+            </summary>
+            <value>The dog face smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.BlackSheep">
+            <summary>
+            Gets the black sheep emoticon.
+            </summary>
+            <value>The black sheep smiley emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Rainbow">
+            <summary>
+            Gets the rainbow emoticon.
+            </summary>
+            <value>The rainbow emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.LeftHug">
+            <summary>
+            Gets the left hug emoticon.
+            </summary>
+            <value>The left hug emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.RightHug">
+            <summary>
+            Gets the right hug emoticon.
+            </summary>
+            <value>The right hug emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.RedLips">
+            <summary>
+            Gets the red lips emoticon.
+            </summary>
+            <value>The red lips emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.RedRose">
+            <summary>
+            Gets the red rose emoticon.
+            </summary>
+            <value>The red rose emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.WiltedRose">
+            <summary>
+            Gets the wilted rose emoticon.
+            </summary>
+            <value>The wilted rose emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.BirthdayCake">
+            <summary>
+            Gets the birthday cake emoticon.
+            </summary>
+            <value>The birthday cake emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Camera">
+            <summary>
+            Gets the camera emoticon.
+            </summary>
+            <value>The camera emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.MobilePhone">
+            <summary>
+            Gets the mobile phone emoticon.
+            </summary>
+            <value>The mobile phone emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Auto">
+            <summary>
+            Gets the auto emoticon.
+            </summary>
+            <value>The auto emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Airplane">
+            <summary>
+            Gets the airplane emoticon.
+            </summary>
+            <value>The airplane emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Filmstrip">
+            <summary>
+            Gets the film strip emoticon.
+            </summary>
+            <value>The film strip emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Note">
+            <summary>
+            Gets the note emoticon.
+            </summary>
+            <value>The note emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Pizza">
+            <summary>
+            Gets the pizza emoticon.
+            </summary>
+            <value>The pizza emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.SoccerBall">
+            <summary>
+            Gets the soccer ball emoticon.
+            </summary>
+            <value>The soccer ball emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.IslandWithPalmTree">
+            <summary>
+            Gets the island with palm tree emoticon.
+            </summary>
+            <value>The island with palm tree emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Stop">
+            <summary>
+            Gets the stop emoticon.
+            </summary>
+            <value>The stop emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Confidential">
+            <summary>
+            Gets the confidential emoticon.
+            </summary>
+            <value>The confidential emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Disagree">
+            <summary>
+            Gets the disagree emoticon.
+            </summary>
+            <value>The disagree emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.WorkFromHome">
+            <summary>
+            Gets the work from home emoticon.
+            </summary>
+            <value>The work from home emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.HoldOn">
+            <summary>
+            Gets the hold on emoticon.
+            </summary>
+            <value>The hold on emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.GoodLuck">
+            <summary>
+            Gets the good luck emoticon.
+            </summary>
+            <value>The good luck emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.CanICallYou">
+            <summary>
+            Gets the can I call you emoticon.
+            </summary>
+            <value>The can I call you emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.DoNotDisturb">
+            <summary>
+            Gets the do not disturb emoticon.
+            </summary>
+            <value>The do not disturb emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.Games">
+            <summary>
+            Gets the games emoticon.
+            </summary>
+            <value>The games emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.EyeRolling">
+            <summary>
+            Gets the eye rolling emoticon.
+            </summary>
+            <value>The eye rolling emoticon.</value>
+        </member>
+        <member name="P:BuildABot.Util.Emoticons.LetsMeet">
+            <summary>
+            Gets the let's meet emoticon.
+            </summary>
+            <value>The let's meet emoticon.</value>
+        </member>
+        <member name="T:BuildABot.Util.Emoticons.Emoticon">
+            <summary>
+            Emoticons
+            </summary>
+        </member>
+        <member name="T:BuildABot.Util.StringHelper">
+            <summary>
+            Helper methods for the String class.
+            </summary>
+        </member>
+        <member name="F:BuildABot.Util.StringHelper.Synonyms">
+            <summary>
+            A dictionary of synonyms.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.GetFirstName(System.String)">
+            <summary>
+            Gets the first name of a string containing multiple names separated by the space character.
+            </summary>
+            <param name="fullName">The full name.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.SetToNAIfEmpty(System.String)">
+            <summary>
+            Sets a string to the "N/A" string if it is empty.
+            </summary>
+            <param name="s">The string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.GetAliasFromSip(System.String)">
+            <summary>
+            Gets the alias from SIP string.
+            </summary>
+            <param name="sip">The SIP string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.RemoveTags(System.String)">
+            <summary>
+            Removes tags from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.ToByteArray(System.String)">
+            <summary>
+            Converts a string to a array. If the string is empty, an array of one element containing the
+            space character is returned.
+            </summary>
+            <param name="s">The string.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.EncloseRtf(System.String)">
+            <summary>
+            Encloses a string in RTF markers.
+            </summary>
+            <param name="s">The string.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.EncloseRtfItalics(System.String)">
+            <summary>
+            Encloses a string in RTF markers for italics.
+            </summary>
+            <param name="s">The string.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.EncloseRtfBold(System.String)">
+            <summary>
+            Encloses a string in RTF markers for bold.
+            </summary>
+            <param name="s">The sstring.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.EqualsToSynonym(System.String,System.String[])">
+            <summary>
+            Checks whether a string equals to a given list of synonyms.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="synonyms">The synonyms.</param>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.StartsWithSynonym(System.String,System.String[])">
+            <summary>
+            Checks whether a string starts with a synonym from a list.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="synonyms">The synonyms.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.StartsWithSynonym(System.String,System.StringComparison,System.String[])">
+            <summary>
+            Checks whether a string starts with a synonym from a list.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="comparisonType">Type of the comparison.</param>
+            <param name="synonyms">The synonyms.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildABot.Util.StringHelper.IsEqualToSynonym(System.String,System.StringComparison,System.String[])">
+            <summary>
+            Determines whether the specified string is equal to any synonym from a list of synonyms.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="comparisonType">Type of the comparison.</param>
+            <param name="synonyms">The synonyms.</param>
+        </member>
+        <member name="T:BuildABot.Util.XmlHelper">
+            <summary>
+            Helper methods for manipulating XML nodes.
+            </summary>
+        </member>
+        <member name="M:BuildABot.Util.XmlHelper.GetInnerXmlOrEmpty(System.Xml.XmlNode)">
+            <summary>
+            Gets the inner XML of a node or returns empty if the node is null.
+            </summary>
+            <param name="node">The node.</param>
+        </member>
+    </members>
+</doc>

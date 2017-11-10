@@ -31,6 +31,7 @@ namespace RequestApi
             using (Stream stream = request.GetRequestStream()) { 
                 stream.Write(byteArray,0,byteArray.Length);
             }
+            
             //getting response
             try
             {
