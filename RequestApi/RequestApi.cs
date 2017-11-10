@@ -27,17 +27,18 @@ namespace RequestApi
             request.ContentType = "application/json";
             request.ContentLength = byteArray.Length;
 
-            //stream 
+            //insert data into request
             using (Stream stream = request.GetRequestStream()) { 
                 stream.Write(byteArray,0,byteArray.Length);
             }
-            
+            //getting response
             try
             {
                 Logger.Debug("response object : " + request.GetResponse().ToString());
                 WebResponse response = request.GetResponse();
                 Logger.Debug("response object : " + response.ToString());
                 Logger.Debug("responseStream object : " + response.GetResponseStream());
+                //reading response
                 using (Stream responseStream = response.GetResponseStream())
                 {
                     StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
@@ -50,6 +51,7 @@ namespace RequestApi
             {
                 WebResponse errorResponse = e.Response;
                 Logger.Debug("errorResponse object : " + errorResponse.ToString());
+                //reading error response
                 using (Stream responseStream = errorResponse.GetResponseStream())
                 {
                     Logger.Debug("responseStream object : " + responseStream.ToString());
