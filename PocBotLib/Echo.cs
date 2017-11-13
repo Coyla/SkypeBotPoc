@@ -34,7 +34,7 @@ namespace PocBotLib
             Reply reply = new Reply();
             try
             {
-                if (message.Content == "request")
+                if (message.Content == "post request")
                 {
                     //request_api
                     RequestApi.RequestApi request = new RequestApi.RequestApi();
@@ -46,7 +46,18 @@ namespace PocBotLib
 
                     reply.Add("api : " + response);
                 }
-                else {
+                else if (message.Content == "get request") {
+                    //request_api
+                    RequestApi.RequestApi request = new RequestApi.RequestApi();
+                    Logger.Debug("request - Handle " + request.ToString());
+                    String endpointBot = ConfigurationManager.AppSettings["endpoint"];
+                    Logger.Debug("endpoint string " + endpointBot);
+                    String response = request.getResponseGet(endpointBot);
+                    Logger.Debug("API response : " + response);
+                    reply.Add("api : " + response);
+                }
+                else
+                {
                     reply.Add("user said : " + message.Content);
                     Logger.Debug("bot message = " + message.Content);
                 }
