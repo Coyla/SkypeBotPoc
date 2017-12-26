@@ -12,14 +12,13 @@ namespace RequestApi
 {
     public class RequestApi
     {
-        public string getResponse(string url)
+        public string getResponse(string url, string json)
         {
             Logger.Debug("get Response function");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             //prepare data to send
-            String messageJson = "{\"message\":\"hello word\"}";
-            Logger.Debug("messageJson : " + messageJson);
-            byte[] byteArray = Encoding.UTF8.GetBytes(messageJson);
+            Logger.Debug("messageJson : " + json);
+            byte[] byteArray = Encoding.UTF8.GetBytes(json);
             Logger.Debug("bytes json : " + byteArray);
             
             //prepare request

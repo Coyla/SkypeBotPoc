@@ -41,9 +41,9 @@ namespace PocBotLib
                     Logger.Debug("request - Handle " + request.ToString());
                     String endpointBot =  ConfigurationManager.AppSettings["endpoint"];
                     Logger.Debug("endpoint string " + endpointBot);
-                    String response  = request.getResponse(endpointBot);
+                    String jsonData = "{\"message\":\"hello world\"}";
+                    String response  = request.getResponse(endpointBot,jsonData);
                     Logger.Debug("API response : " + response);
-
                     reply.Add("api : " + response);
                 }
                 else if (message.Content == "get request") {
@@ -58,7 +58,13 @@ namespace PocBotLib
                 }
                 else
                 {
-                    reply.Add("user said : " + message.Content);
+                    RequestApi.RequestApi request = new RequestApi.RequestApi();
+                    Logger.Debug("request - Handle " + request.ToString());
+                    String endpointBot = ConfigurationManager.AppSettings["endpoint"];
+                    Logger.Debug("endpoint string " + endpointBot);
+                    String jsonData = "{\"message\":\""+ message.Content +"\"}";
+                    String response = request.getResponse(endpointBot,jsonData);
+                    reply.Add(message.Content);
                     Logger.Debug("bot message = " + message.Content);
                 }
 
