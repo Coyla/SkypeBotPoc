@@ -26,8 +26,12 @@ namespace RequestApi
             request.ContentType = "application/json";
             request.ContentLength = byteArray.Length;
 
+            Logger.Debug("bytes array length : " + byteArray.Length); 
+
             //insert data into request
-            using (Stream stream = request.GetRequestStream()) { 
+            using (Stream stream = request.GetRequestStream()) {
+                Logger.Debug("request object : " + request.ToString());
+                Logger.Debug("stream object : " + stream.ToString());
                 stream.Write(byteArray,0,byteArray.Length);
             }
             
