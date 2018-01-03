@@ -64,8 +64,8 @@ namespace PocBotLib
                     Logger.Debug("endpoint string " + endpointBot);
                     String jsonData = "{\"message\":\""+ message.Content +"\"}";
                     String response = request.getResponse(endpointBot,jsonData);
-                    reply.Add(message.Content);
-                    Logger.Debug("bot message = " + message.Content);
+                    reply.Add(response);
+                    Logger.Debug("bot message = " + response);
                 }
 
             }
