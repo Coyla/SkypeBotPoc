@@ -21,3 +21,5 @@ C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\LyncBotConsole
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\LyncBotConsole\bin\x64\Release\Microsoft.Rtc.Collaboration.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\LyncBotConsole\bin\x64\Release\Microsoft.Rtc.Collaboration.xml
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\LyncBotConsole\obj\x64\Release\LyncBotConsole.csproj.CoreCompileInputs.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\LyncBotConsole\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\LyncBotConsole\bin\x64\Release\Newtonsoft.Json.xml

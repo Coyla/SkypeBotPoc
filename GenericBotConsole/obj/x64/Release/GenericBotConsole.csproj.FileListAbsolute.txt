@@ -1,8 +1,6 @@
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\GenericBotConsole.exe.config
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\GenericBotConsole.exe
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\GenericBotConsole.pdb
-C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\BuildABot.Core.dll
-C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\BuildABot.Util.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Log.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\PocBotLib.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Log.pdb
@@ -15,3 +13,8 @@ C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotCons
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Release\GenericBotConsole.exe
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Release\GenericBotConsole.pdb
 C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Microsoft.Rtc.Collaboration.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Microsoft.Rtc.Collaboration.xml
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\GenericBotConsole\obj\x64\Release\GenericBotConsole.csproj.CoreCompileInputs.cache

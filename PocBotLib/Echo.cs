@@ -13,7 +13,7 @@ using System.Net;
 using System.IO;
 using RequestApi;
 using System.Configuration;
-
+using Newtonsoft.Json;
 namespace PocBotLib
 {
     [Export(typeof(MessageHandler))]
@@ -64,7 +64,9 @@ namespace PocBotLib
                     Logger.Debug("endpoint string " + endpointBot);
                     String jsonData = "{\"message\":\""+ message.Content +"\"}";
                     String response = request.getResponse(endpointBot,jsonData);
-                    reply.Add(response);
+                    dynamic responseJson = JsonConvert.DeserializeObject(response);
+                    Logger.Debug(responseJson.message);
+                    reply.Add((string)responseJson.message);
                     Logger.Debug("bot message = " + response);
                 }
 

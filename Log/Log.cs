@@ -10,8 +10,8 @@ namespace Log
     {
          public  Logger(){
          }
-        static public void Debug(String message) { 
-            Console.WriteLine("[debug] = "+ message);
+        static public void Debug(object message) { 
+            Console.WriteLine("[debug] = "+ message.ToString());
         }
     }
 }

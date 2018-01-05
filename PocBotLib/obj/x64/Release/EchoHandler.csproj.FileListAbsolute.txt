@@ -15,3 +15,5 @@ C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\PocBotLib\obj\
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\Microsoft.Rtc.Collaboration.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\Microsoft.Rtc.Collaboration.xml
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\obj\x64\Release\EchoHandler.csproj.CoreCompileInputs.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\PocBotLib\bin\x64\Release\Newtonsoft.Json.xml
