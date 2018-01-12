@@ -7,8 +7,8 @@
     <ProjectGuid>{3F411491-5DEF-4162-A27A-C79A145F6EC3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LyncBotConsole</RootNamespace>
-    <AssemblyName>LyncBotConsole</AssemblyName>
+    <RootNamespace>UcmaBot</RootNamespace>
+    <AssemblyName>UcmaBot</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -92,9 +92,9 @@
       <Project>{90185518-f075-4676-bf29-c10836fba7e1}</Project>
       <Name>Log</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PocBotLib\EchoHandler.csproj">
+    <ProjectReference Include="..\PocBotLib\MessageHandler.csproj">
       <Project>{3d87c07b-ae94-432d-b40b-b903f5716412}</Project>
-      <Name>EchoHandler</Name>
+      <Name>MessageHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoHandler", "PocBotLib\EchoHandler.csproj", "{3D87C07B-AE94-432D-B40B-B903F5716412}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHandler", "PocBotLib\MessageHandler.csproj", "{3D87C07B-AE94-432D-B40B-B903F5716412}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBotConsole", "GenericBotConsole\GenericBotConsole.csproj", "{96FD01FE-C77C-4AE9-9612-5E7B95D5709D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log", "Log\Log.csproj", "{90185518-F075-4676-BF29-C10836FBA7E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyncBotConsole", "LyncBotConsole\LyncBotConsole.csproj", "{3F411491-5DEF-4162-A27A-C79A145F6EC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcmaBot", "LyncBotConsole\UcmaBot.csproj", "{3F411491-5DEF-4162-A27A-C79A145F6EC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestApi", "RequestApi\RequestApi.csproj", "{46315FC5-7C83-4600-99FB-E88F9EF930D5}"
 EndProject
@@ -84,5 +86,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C89ACE9C-DAD0-487D-87E7-0974F4525C73}
 	EndGlobalSection
 EndGlobal

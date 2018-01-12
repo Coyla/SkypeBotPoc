@@ -14,7 +14,7 @@ using PocBotLib;
 using Log;
 
 
-namespace LyncBotConsole
+namespace UcmaBot
 {
     class Program
     {

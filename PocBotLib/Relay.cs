@@ -17,9 +17,9 @@ using Newtonsoft.Json;
 namespace PocBotLib
 {
     [Export(typeof(MessageHandler))]
-    public class Echo : SingleStateMessageHandler
+    public class Relay : SingleStateMessageHandler
     {
-        public Echo()
+        public Relay()
         :base(".*"){ 
         }
         protected override string GetInitialHandlingText()
