@@ -7,8 +7,8 @@
     <ProjectGuid>{3D87C07B-AE94-432D-B40B-B903F5716412}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PocBotLib</RootNamespace>
-    <AssemblyName>PocBotLib</AssemblyName>
+    <RootNamespace>MessageHandler</RootNamespace>
+    <AssemblyName>MessageHandler</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

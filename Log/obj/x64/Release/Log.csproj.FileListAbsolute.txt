@@ -1,6 +1,6 @@
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\bin\x64\Release\Log.dll
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\bin\x64\Release\Log.pdb
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.dll
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\bin\x64\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\bin\x64\Release\Log.pdb
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.csproj.CoreCompileInputs.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.pdb

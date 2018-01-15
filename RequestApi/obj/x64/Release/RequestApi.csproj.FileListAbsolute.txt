@@ -1,8 +1,6 @@
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\RequestApi.dll
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.dll
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.csprojResolveAssemblyReference.cache
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.dll
-C:\Users\dev-user\documents\visual studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.pdb
-C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Newtonsoft.Json.dll
-C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\bin\x64\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.csprojResolveAssemblyReference.cache
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.csproj.CoreCompileInputs.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\RequestApi\obj\x64\Release\RequestApi.dll

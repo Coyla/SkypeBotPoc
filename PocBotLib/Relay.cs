@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildABot.Core;
-using BuildABot.Util;
 using System.ComponentModel.Composition;
 using BuildABot.Core.MessageHandlers;
 using Log;
-using System.Web;
-using System.Net;
-using System.IO;
-using RequestApi;
 using System.Configuration;
 using Newtonsoft.Json;
 namespace PocBotLib

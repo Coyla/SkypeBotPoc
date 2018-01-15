@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildABot.Core.MessageHandlers;
-using BuildABot.Util;
-using BuildABot.Core;
 using BuildABot.UC;
-using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Configuration;
-using PocBotLib;
 using Log;
 
 
