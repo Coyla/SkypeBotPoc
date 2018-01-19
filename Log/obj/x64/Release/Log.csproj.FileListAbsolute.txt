@@ -4,3 +4,9 @@ C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Re
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.csproj.CoreCompileInputs.cache
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.dll
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\PocBotLib\Log\obj\x64\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\bin\x64\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\bin\x64\Release\Log.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\obj\x64\Release\Log.csprojResolveAssemblyReference.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\obj\x64\Release\Log.csproj.CoreCompileInputs.cache
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\obj\x64\Release\Log.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Log\obj\x64\Release\Log.pdb
