@@ -47,16 +47,22 @@ namespace PocBotLib
                 }
                 else
                 {
+                    
                     RequestApi.RequestApi request = new RequestApi.RequestApi();
                     Logger.Debug("request - Handle " + request.ToString());
                     String endpointBot = ConfigurationManager.AppSettings["endpoint"];
                     Logger.Debug("endpoint string " + endpointBot);
-                    String jsonData = "{\"message\":\""+ message.Content +"\"}";
-                    String response = request.getResponse(endpointBot,jsonData);
+                    String jsonData = "{\"message\":\""+ message.Content +"}";
+
+                    String messageJson = JsonConvert.SerializeObject(message);
+                    Logger.Debug(messageJson);
+
+                    String response = request.getResponse(endpointBot,messageJson);
+                    
                     dynamic responseJson = JsonConvert.DeserializeObject(response);
                     Logger.Debug(responseJson.message);
                     reply.Add((string)responseJson.message);
-                    Logger.Debug("bot message = " + response);
+                    Logger.Debug("bot message = " + message.Content);
                 }
 
             }

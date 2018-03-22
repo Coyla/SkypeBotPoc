@@ -61,9 +61,16 @@
     <Reference Include="BuildABot.Util">
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft UCMA 4.0\SDK\Core\Sample Applications\Reference\BuildABot\BuildABot.UC\bin\Debug\BuildABot.Util.dll</HintPath>
     </Reference>
+    <Reference Include="MessageHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MessageHandler\bin\x64\Release\MessageHandler.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Rtc.Collaboration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft UCMA 4.0\SDK\Core\Bin\Microsoft.Rtc.Collaboration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -82,6 +89,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Log\Log.csproj">

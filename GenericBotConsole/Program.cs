@@ -25,7 +25,6 @@ namespace GenericBotConsole
                 while (userMessage != "exit")
                 {
                     Logger.Debug("user message : " + userMessage);
-                   
                     bot.ProcessMessage(userMessage);
                     userMessage = Console.ReadLine();
                 }

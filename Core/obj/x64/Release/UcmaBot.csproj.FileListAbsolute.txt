@@ -63,3 +63,8 @@ C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\ob
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\obj\x64\Release\UcmaBot.csproj.CoreCompileInputs.cache
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\obj\x64\Release\UcmaBot.exe
 C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\obj\x64\Release\UcmaBot.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\bin\x64\Release\MessageHandler.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\bin\x64\Release\RequestApi.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\bin\x64\Release\MessageHandler.pdb
+C:\Users\dev-user\Documents\Visual Studio 2012\Projects\AcrobotRelayUcma\Core\bin\x64\Release\Newtonsoft.Json.xml
