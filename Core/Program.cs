@@ -15,7 +15,6 @@ namespace UcmaBot
             {
                 Logger.Debug("main bot function");
                 Debug.Listeners.Add(new ConsoleTraceListener());
-
                 String applicationUserAgent = ConfigurationManager.AppSettings["applicationuseragent"];
                 String applicationurn = ConfigurationManager.AppSettings["applicationurn"];
                 Logger.Debug("applicationUserAgent : " + applicationUserAgent);

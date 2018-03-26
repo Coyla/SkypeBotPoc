@@ -12,9 +12,9 @@ namespace RequestApi
 {
     public class RequestApi
     {
-        public string getResponse(string url, string json)
+        public string post(string url, string json)
         {
-            Logger.Debug("get Response function");
+            Logger.Debug("post function");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             //prepare data to send
             Logger.Debug("messageJson : " + json);
@@ -25,17 +25,12 @@ namespace RequestApi
             request.Method = "POST";
             request.ContentType = "application/json";
             request.ContentLength = byteArray.Length;
-
-            Logger.Debug("bytes array length : " + byteArray.Length); 
-
-            //insert data into request
             using (Stream stream = request.GetRequestStream()) {
                 Logger.Debug("request object : " + request.ToString());
                 Logger.Debug("stream object : " + stream.ToString());
                 stream.Write(byteArray,0,byteArray.Length);
             }
             
-            //getting response
             try
             {
                 Logger.Debug("response object : " + request.GetResponse().ToString());
@@ -55,44 +50,6 @@ namespace RequestApi
             {
                 WebResponse errorResponse = e.Response;
                 Logger.Debug("errorResponse object : " + errorResponse.ToString());
-                //reading error response
-                using (Stream responseStream = errorResponse.GetResponseStream())
-                {
-                    Logger.Debug("responseStream object : " + responseStream.ToString());
-                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                    Logger.Debug("reader object : " + reader.ToString());
-                    String error = "error request api" + reader.ReadToEnd();
-                    Logger.Debug("error object : " + error);
-                    return reader.ReadToEnd();
-                }
-                throw;
-            }
-        }
-        public string getResponseGet(string url) { 
-            Logger.Debug("get Response function");
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            //getting response
-            try
-            {
-                Logger.Debug("response object : " + request.GetResponse().ToString());
-                WebResponse response = request.GetResponse();
-                Logger.Debug("response object : " + response.ToString());
-                Logger.Debug("responseStream object : " + response.GetResponseStream());
-                //reading response
-                using (Stream responseStream = response.GetResponseStream())
-                {
-                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                    Logger.Debug("reader object : " + reader.ToString());
-                    return reader.ReadToEnd();
-                }
-
-            }
-            catch (WebException e)
-            {
-                WebResponse errorResponse = e.Response;
-                Logger.Debug("errorResponse object : " + errorResponse.ToString());
-                //reading error response
                 using (Stream responseStream = errorResponse.GetResponseStream())
                 {
                     Logger.Debug("responseStream object : " + responseStream.ToString());
